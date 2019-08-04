@@ -1,0 +1,115 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--ViewMain-->
+    <sys:String x:Key="StrTbIp">IP地址</sys:String>
+    <sys:String x:Key="StrTbPort">端口</sys:String>
+    <sys:String x:Key="StrChkStart">启动服务</sys:String>
+    <sys:String x:Key="StrBtnSettings">设置</sys:String>
+    <sys:String x:Key="StrBtnDownloadManager">下载管理</sys:String>
+    <sys:String x:Key="StrBtnShowMatches">查看匹配</sys:String>
+    <sys:String x:Key="StrBtnClearMatches">清除匹配</sys:String>
+    <sys:String x:Key="StrTbFileName">文件</sys:String>
+    <sys:String x:Key="StrTbPsn">PSN</sys:String>
+    <sys:String x:Key="StrTbLocal">本地</sys:String>
+    <sys:String x:Key="StrBtnDownload">下载</sys:String>
+    <sys:String x:Key="StrBtnCopy">复制</sys:String>
+    <sys:String x:Key="StrBtnOpen">选择</sys:String>
+
+    <sys:String x:Key="StrStartService">启动服务</sys:String>
+    <sys:String x:Key="StrStopService">停止服务</sys:String>
+    <sys:String x:Key="StrStartFail">服务启动失败</sys:String>
+    <sys:String x:Key="StrIpEmpty">IP地址不能为空</sys:String>
+    <sys:String x:Key="StrIpWrong">IP地址格式不正确</sys:String>
+    <sys:String x:Key="StrPortEmpty">端口号不能为空</sys:String>
+    <sys:String x:Key="StrPortWrong">端口号格式不正确</sys:String>
+    <sys:String x:Key="StrPortWrongRange">端口号范围不正确</sys:String>
+    <sys:String x:Key="StrClearHistory">确认清空所有匹配？</sys:String>
+    <sys:String x:Key="StrCopyRelated">是否复制相关包链接？</sys:String>
+    <sys:String x:Key="StrCopyFinished">链接已复制到剪贴板</sys:String>
+    <sys:String x:Key="StrOpenInconsistent">所选文件名称与下载地址不一致，是否继续？</sys:String>
+    <sys:String x:Key="StrOpenRelated">是否添加相关包地址？</sys:String>
+    <sys:String x:Key="StrDownloadManagerConnectError">无法连接至下载服务器</sys:String>
+
+    <!--ViewSettings-->
+    <sys:String x:Key="StrLbTitleSettings">设置</sys:String>
+    <sys:String x:Key="StrTbExts">过滤扩展名</sys:String>
+    <sys:String x:Key="StrTbLang">语言</sys:String>
+    <sys:String x:Key="StrTbDownloadPath">下载路径</sys:String>
+    <sys:String x:Key="StrBtnSave">保存</sys:String>
+
+    <sys:String x:Key="StrExtsEmpty">扩展名不能为空</sys:String>
+
+    <!--ViewHistory-->
+    <sys:String x:Key="StrLbTitleHistory">匹配记录</sys:String>
+    <sys:String x:Key="StrHeaderFileName">文件名</sys:String>
+    <sys:String x:Key="StrHeaderLocal">本地路径</sys:String>
+    <sys:String x:Key="StrHeaderPsn">网址</sys:String>
+
+    <!--ViewDownload-->
+    <sys:String x:Key="StrLbTitleDownload">下载管理器</sys:String>
+    <sys:String x:Key="StrBtnStartAll">全部开始</sys:String>
+    <sys:String x:Key="StrBtnPauseAll">全部暂停</sys:String>
+    <sys:String x:Key="StrBtnCancelAll">全部取消</sys:String>
+    <sys:String x:Key="StrBtnStart">开始</sys:String>
+    <sys:String x:Key="StrBtnPause">暂停</sys:String>
+    <sys:String x:Key="StrBtnCancel">取消</sys:String>
+
+    <sys:String x:Key="StrStatusDownloading">正在下载</sys:String>
+    <sys:String x:Key="StrStatusWaiting">等待中</sys:String>
+    <sys:String x:Key="StrStatusPaused">已暂停</sys:String>
+    <sys:String x:Key="StrStatusComplete">已完成</sys:String>
+    <sys:String x:Key="StrStatusError">错误</sys:String>
+    <sys:String x:Key="StrConfirmToCancelAll">确认取消全部下载？</sys:String>
+    <sys:String x:Key="StrConfirmToCancelSingle">确认取消下载</sys:String>
+    <sys:String x:Key="StrDeleteFail">删除失败</sys:String>
+
+    <!--ViewAbout-->
+    <sys:String x:Key="StrLbTitleAbout">关于</sys:String>
+    <sys:String x:Key="StrTbUpdate">更新日志：</sys:String>
+    <sys:String x:Key="StrBtnDisclaimer">开源代码许可</sys:String>
+
+    <sys:String x:Key="StrUpdates" xml:space="preserve">
+        版本 2.0.0
+            01.增加多语言功能
+            02.增加高dpi支持
+            03.增加aria2下载功能
+            04.修正单例模式的判断
+            05.完善ui设计
+            06.优化获取网络文件可用性的判断方法
+            07.整体优化
+        
+        版本 1.0.0
+            01.早期框架
+    </sys:String>
+    <sys:String x:Key="StrDisclaimer" xml:space="preserve">
+        aria2 1.34.0
+        -------------------------------------------
+        https://aria2.github.io/
+        Copyright © 2018 - Tatsuhiro Tsujikawa
+        Licensed under the GPLv2 License
+    </sys:String>
+
+    <!--DialogMessage-->
+    <sys:String x:Key="StrBtnOk">确定</sys:String>
+    <sys:String x:Key="StrBtnYes">是</sys:String>
+    <sys:String x:Key="StrBtnNo">否</sys:String>
+
+    <!--Others-->
+    <sys:String x:Key="StrProgramRunning">程序已在运行</sys:String>
+    <sys:String x:Key="StrAquireIpWrong">获取IP地址出错</sys:String>
+    <sys:String x:Key="StrUncaughtError">捕获未处理异常：</sys:String>
+    <sys:String x:Key="StrFatalError">程序发生致命错误，即将终止</sys:String>
+    <sys:String x:Key="StrDllError1" xml:space="preserve">
+        dll error：加载dll失败
+        位置：RegistDLL()
+        描述：
+    </sys:String>
+    <sys:String x:Key="StrDllError2" xml:space="preserve">
+        dll error：
+        位置：AssemblyResolve()
+        描述：
+    </sys:String>
+
+</ResourceDictionary>

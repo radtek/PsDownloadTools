@@ -1,0 +1,52 @@
+﻿<Window x:Class="PsDownloadTools.View.ViewSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:shell="clr-namespace:Microsoft.Windows.Shell;assembly=Microsoft.Windows.Shell"
+        Title="{DynamicResource StrLbTitleSettings}" Height="300" Width="400" MinHeight="300" MinWidth="400" MaxHeight="300" MaxWidth="400" Style="{StaticResource WindowDefault}" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+    <shell:WindowChrome.WindowChrome>
+        <shell:WindowChrome GlassFrameThickness="1" NonClientFrameEdges="None" CaptionHeight="0"/>
+    </shell:WindowChrome.WindowChrome>
+
+    <Grid Name="Grid_Window">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Name="Grid_Title" Height="24" Margin="8,0,8,0" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Name="Lb_Title" Content="{DynamicResource StrLbTitleSettings}" Style="{StaticResource LbDefault}" Grid.Column="0">
+                <Label.Effect>
+                    <DropShadowEffect ShadowDepth="2" Direction="270" BlurRadius="6"/>
+                </Label.Effect>
+            </Label>
+
+            <Button Name="Btn_Close" Style="{StaticResource BtnClose}" Width="32" Grid.Column="1" Click="Btn_Close_Click"/>
+        </Grid>
+
+        <Grid Name="Grid_Content" Margin="8,8,8,8" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Row="0">
+                <TextBlock Text="{DynamicResource StrTbExts}" Style="{StaticResource TextBlockDefault}"/>
+                <TextBox Name="Tb_Ext" Style="{StaticResource TextBoxDefault}" Height="28" Margin="0,0,0,16" HorizontalAlignment="Stretch"/>
+
+                <TextBlock Text="{DynamicResource StrTbLang}" Style="{StaticResource TextBlockDefault}"/>
+                <ComboBox Name="Cb_Lang" Style="{StaticResource CbDefault}" Height="28" Width="80" Margin="0,0,0,16" HorizontalAlignment="Left" SelectionChanged="Cb_Lang_SelectionChanged"/>
+
+                <TextBlock Text="{DynamicResource StrTbDownloadPath}" Style="{StaticResource TextBlockDefault}"/>
+                <Button Name="Btn_Download_Path" Style="{StaticResource BtnText}" Margin="0,0,0,16" HorizontalAlignment="Left" Click="Btn_Download_Path_Click"/>
+            </StackPanel>
+
+            <Button Name="Btn_Save" Content="{DynamicResource StrBtnSave}" Style="{StaticResource BtnDefault}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Row="1" Click="Btn_Save_Click"/>
+        </Grid>
+    </Grid>
+</Window>

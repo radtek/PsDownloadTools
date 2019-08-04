@@ -1,0 +1,116 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--ViewMain-->
+    <sys:String x:Key="StrTbIp">IP</sys:String>
+    <sys:String x:Key="StrTbPort">Port</sys:String>
+    <sys:String x:Key="StrChkStart">Start</sys:String>
+    <sys:String x:Key="StrBtnSettings">Settings</sys:String>
+    <sys:String x:Key="StrBtnDownloadManager">Download Manager</sys:String>
+    <sys:String x:Key="StrBtnShowMatches">Show Matches</sys:String>
+    <sys:String x:Key="StrBtnClearMatches">Clear Matches</sys:String>
+    <sys:String x:Key="StrTbFileName">File</sys:String>
+    <sys:String x:Key="StrTbPsn">PSN</sys:String>
+    <sys:String x:Key="StrTbLocal">Local</sys:String>
+    <sys:String x:Key="StrBtnDownload">Download</sys:String>
+    <sys:String x:Key="StrBtnDownloading">Downloading</sys:String>
+    <sys:String x:Key="StrBtnCopy">Copy Url</sys:String>
+    <sys:String x:Key="StrBtnOpen">Open File</sys:String>
+
+    <sys:String x:Key="StrStartService">Start</sys:String>
+    <sys:String x:Key="StrStopService">Stop</sys:String>
+    <sys:String x:Key="StrStartFail">Failed to start</sys:String>
+    <sys:String x:Key="StrIpEmpty">Empty IP address</sys:String>
+    <sys:String x:Key="StrIpWrong">Wrong IP address</sys:String>
+    <sys:String x:Key="StrPortEmpty">Empty port</sys:String>
+    <sys:String x:Key="StrPortWrong">Wrong port</sys:String>
+    <sys:String x:Key="StrPortWrongRange">Wrong range of port</sys:String>
+    <sys:String x:Key="StrClearHistory">Confirm to clear all match history?</sys:String>
+    <sys:String x:Key="StrCopyRelated">Copy related links?</sys:String>
+    <sys:String x:Key="StrCopyFinished">Links copied</sys:String>
+    <sys:String x:Key="StrOpenInconsistent" xml:space="preserve">Chosen file does not match the download url, &#13;Confirm to continue?</sys:String>
+    <sys:String x:Key="StrOpenRelated">Add related packages?</sys:String>
+    <sys:String x:Key="StrDownloadManagerConnectError">Can not connect to download server</sys:String>
+
+    <!--ViewSettings-->
+    <sys:String x:Key="StrLbTitleSettings">Settings</sys:String>
+    <sys:String x:Key="StrTbExts">Extension filter</sys:String>
+    <sys:String x:Key="StrTbLang">Language</sys:String>
+    <sys:String x:Key="StrTbDownloadPath">Download path</sys:String>
+    <sys:String x:Key="StrBtnSave">Save</sys:String>
+
+    <sys:String x:Key="StrExtsEmpty">Empty extensions</sys:String>
+
+    <!--ViewHistory-->
+    <sys:String x:Key="StrLbTitleHistory">Match History</sys:String>
+    <sys:String x:Key="StrHeaderFileName">File Name</sys:String>
+    <sys:String x:Key="StrHeaderLocal">Local Path</sys:String>
+    <sys:String x:Key="StrHeaderPsn">PSN Path</sys:String>
+
+    <!--ViewDownload-->
+    <sys:String x:Key="StrLbTitleDownload">Download Manager</sys:String>
+    <sys:String x:Key="StrBtnStartAll">Start All</sys:String>
+    <sys:String x:Key="StrBtnPauseAll">Pause All</sys:String>
+    <sys:String x:Key="StrBtnCancelAll">Cancel All</sys:String>
+    <sys:String x:Key="StrBtnStart">Start</sys:String>
+    <sys:String x:Key="StrBtnPause">Pause</sys:String>
+    <sys:String x:Key="StrBtnCancel">Cancel</sys:String>
+
+    <sys:String x:Key="StrStatusDownloading">Downloading</sys:String>
+    <sys:String x:Key="StrStatusWaiting">Waiting</sys:String>
+    <sys:String x:Key="StrStatusPaused">Paused</sys:String>
+    <sys:String x:Key="StrStatusComplete">Complete</sys:String>
+    <sys:String x:Key="StrStatusError">Error</sys:String>
+    <sys:String x:Key="StrConfirmToCancelAll">Confirm to cancel all downloads?</sys:String>
+    <sys:String x:Key="StrConfirmToCancelSingle">Confirm to cancel</sys:String>
+    <sys:String x:Key="StrDeleteFail">Delete fail</sys:String>
+
+    <!--ViewAbout-->
+    <sys:String x:Key="StrLbTitleAbout">About</sys:String>
+    <sys:String x:Key="StrTbUpdate">Update History:</sys:String>
+    <sys:String x:Key="StrBtnDisclaimer">Open Source Lisence</sys:String>
+
+    <sys:String x:Key="StrUpdates" xml:space="preserve">
+        version 2.0.0
+            01.Add multi-lingual support
+            02.Add high dpi support
+            03.Add aria2 download support
+            04.Fix singleton pattern
+            05.Improve ui design
+            06.Improve the function of accessing remote files
+            07.Improve stability
+        
+        version 1.0.0
+            01.Early framework
+    </sys:String>
+    <sys:String x:Key="StrDisclaimer" xml:space="preserve">
+        aria2 1.34.0
+        -------------------------------------------
+        https://aria2.github.io/
+        Copyright © 2018 - Tatsuhiro Tsujikawa
+        Licensed under the GPLv2 License
+    </sys:String>
+
+    <!--DialogMessage-->
+    <sys:String x:Key="StrBtnOk">Ok</sys:String>
+    <sys:String x:Key="StrBtnYes">Yes</sys:String>
+    <sys:String x:Key="StrBtnNo">No</sys:String>
+
+    <!--Others-->
+    <sys:String x:Key="StrProgramRunning">Program is already running</sys:String>
+    <sys:String x:Key="StrAquireIpWrong">acquire IP failed</sys:String>
+    <sys:String x:Key="StrUncaughtError" xml:space="preserve">Unhandled exception:&#13;</sys:String>
+    <sys:String x:Key="StrFatalError" xml:space="preserve">Fatal exception has occurred, &#13;program is closing</sys:String>
+    <sys:String x:Key="StrDllError1" xml:space="preserve">
+        dll error: DLL load failed
+        location: RegistDLL()
+        description: 
+    </sys:String>
+    <sys:String x:Key="StrDllError2" xml:space="preserve">
+        dll error: 
+        location: AssemblyResolve()
+        description: 
+    </sys:String>
+
+</ResourceDictionary>

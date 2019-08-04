@@ -1,0 +1,144 @@
+﻿<Window x:Class="PsDownloadTools.View.ViewDownload"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:shell="clr-namespace:Microsoft.Windows.Shell;assembly=Microsoft.Windows.Shell"
+        xmlns:custom="clr-namespace:PsDownloadTools.Custom"
+        Title="{DynamicResource StrLbTitleDownload}" Height="450" Width="800" MinHeight="450" MinWidth="800" Style="{StaticResource WindowDefault}" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+    <shell:WindowChrome.WindowChrome>
+        <shell:WindowChrome GlassFrameThickness="1" NonClientFrameEdges="None" CaptionHeight="0"/>
+    </shell:WindowChrome.WindowChrome>
+
+    <Grid Name="Grid_Window">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Name="Grid_Title" Height="24" Margin="8,0,8,0" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Name="Lb_Title" Content="{DynamicResource StrLbTitleDownload}" Style="{StaticResource LbDefault}" Grid.Column="0">
+                <Label.Effect>
+                    <DropShadowEffect ShadowDepth="2" Direction="270" BlurRadius="6"/>
+                </Label.Effect>
+            </Label>
+
+            <Button Name="Btn_Close" Style="{StaticResource BtnClose}" Width="32" Grid.Column="1" Click="Btn_Close_Click"/>
+        </Grid>
+
+        <Grid Name="Grid_Control" Margin="8,0,8,0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="Btn_Start_All"  Content="{DynamicResource StrBtnStartAll}"  Style="{StaticResource BtnDefault}" Margin="0,8,16,8" Grid.Column="0" Click="Btn_Start_All_Click"/>
+            <Button Name="Btn_Pause_All"  Content="{DynamicResource StrBtnPauseAll}"  Style="{StaticResource BtnDefault}" Margin="0,8,16,8" Grid.Column="1" Click="Btn_Pause_All_Click"/>
+            <Button Name="Btn_Cancel_All" Content="{DynamicResource StrBtnCancelAll}" Style="{StaticResource BtnDefault}" Margin="0,8,16,8" Grid.Column="2" Click="Btn_Cancel_All_Click"/>
+            <TextBlock Name="Tb_Download_Info" Style="{StaticResource TextBlockDefault}" TextAlignment="Right" HorizontalAlignment="Right" Grid.Column="3"/>
+        </Grid>
+
+        <ListView Name="Lv" SelectionMode="Single" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Style="{StaticResource LvRequest}" ItemContainerStyle="{StaticResource LvRequestItem}" Margin="8,8,8,8" Grid.Row="2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.Effect>
+                            <DropShadowEffect Direction="270" BlurRadius="16" Opacity="0.3" ShadowDepth="3"/>
+                        </Grid.Effect>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Name="Bd" Background="{StaticResource ColorWindowBackground}" BorderBrush="{StaticResource ColorControlBorder}" BorderThickness="1" Grid.ColumnSpan="2"/>
+
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Name="Tb_Download_Status"          Text="{Binding GetStatus, Mode=OneWay}" Foreground="{Binding GetStatusColor, Mode=OneWay}" Style="{StaticResource TextBlockDefault}" Margin="16,16,16,8" Grid.Row="0" Grid.Column="0"/>
+                            <TextBlock Name="Tb_Download_Name"            Text="{Binding GetName, Mode=OneWay}"                                                      Style="{StaticResource TextBlockDefault}" Margin="0,16,16,8"  Grid.Row="0" Grid.Column="1"/>
+                            <custom:CustomProgressBar x:Name="Cpb_Download" IsIndeterminate="False" IsStop="{Binding IsStop, Mode=OneWay}" ProgressMax="100" ProgressValue="{Binding GetProgress, Mode=OneWay}" Height="16" Margin="16,0,16,8" Grid.Row="1" Grid.ColumnSpan="2"/>
+                            <TextBlock Name="Tb_Download_Size_Speed_Time" Text="{Binding SizeSpeedTime, Mode=OneWay}"                                                Style="{StaticResource TextBlockDefault}" Margin="16,0,16,16" Grid.Row="2" Grid.ColumnSpan="2"/>
+                        </Grid>
+
+                        <StackPanel Grid.Column="1">
+                            <CheckBox Name="Chk_Download_Start_Pause" Style="{StaticResource ChkStartPaause}" IsChecked="{Binding IsStop, Mode=OneWay}" IsEnabled="{Binding IsComplete, Mode=OneWay}" Margin="0,16,16,8" HorizontalContentAlignment="Left" Click="Chk_Download_Start_Pause_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Path IsEnabled="{Binding ElementName=Chk_Download_Start_Pause, Path=IsChecked}" Width="12" Height="12" Margin="0,0,8,0">
+                                        <Path.Style>
+                                            <Style TargetType="Path">
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsEnabled" Value="True">
+                                                        <Setter Property="Data" Value="{DynamicResource PathStart}"/>
+                                                        <Setter Property="Fill" Value="{DynamicResource ColorGreen}"/>
+                                                    </Trigger>
+
+                                                    <Trigger Property="IsEnabled" Value="False">
+                                                        <Setter Property="Data" Value="{DynamicResource PathPause}"/>
+                                                        <Setter Property="Fill" Value="{DynamicResource ColorYellow}"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Path.Style>
+                                    </Path>
+
+                                    <TextBlock IsEnabled="{Binding ElementName=Chk_Download_Start_Pause, Path=IsChecked}">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockDefault}">
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsEnabled" Value="True">
+                                                        <Setter Property="Text" Value="{DynamicResource StrBtnStart}"/>
+                                                    </Trigger>
+
+                                                    <Trigger Property="IsEnabled" Value="False">
+                                                        <Setter Property="Text" Value="{DynamicResource StrBtnPause}"/>
+                                                        <Setter Property="Opacity" Value="1"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </StackPanel>
+                            </CheckBox>
+
+                            <Button Name="Btn_Download_Cancel"     Style="{StaticResource BtnDefault}" Margin="0,0,16,16"  HorizontalContentAlignment="Left" Click="Btn_Download_Cancel_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Path Data="{StaticResource PathCancel}" Fill="{StaticResource ColorRed}" Width="12" Height="12" Margin="0,0,8,0"/>
+                                    <TextBlock Text="{DynamicResource StrBtnCancel}" Style="{StaticResource TextBlockDefault}"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource FindAncestor, AncestorType=ListViewItem}}" Value="True">
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource ColorAccentDeep}"/>
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType=ListViewItem}}" Value="True">
+                            <Setter TargetName="Bd" Property="BorderBrush"     Value="{StaticResource ColorAccent}"/>
+                            <Setter TargetName="Bd" Property="BorderThickness" Value="2"/>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>
